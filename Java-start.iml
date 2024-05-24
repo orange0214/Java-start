@@ -15,6 +15,10 @@
       <excludeFolder url="file://$MODULE_DIR$/oop-practice" />
       <excludeFolder url="file://$MODULE_DIR$/string" />
       <excludeFolder url="file://$MODULE_DIR$/oop-extends" />
+      <excludeFolder url="file://$MODULE_DIR$/oop-polymorphism" />
+      <excludeFolder url="file://$MODULE_DIR$/oop-codeblock" />
+      <excludeFolder url="file://$MODULE_DIR$/oop-final" />
+      <excludeFolder url="file://$MODULE_DIR$/oop-package" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
