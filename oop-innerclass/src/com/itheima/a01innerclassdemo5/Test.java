@@ -1,8 +1,7 @@
-package com.itheima.a01innerclassdemo1;
+package com.itheima.a01innerclassdemo5;
 
 public class Test {
     public static void main(String[] args) {
-        Car c = new Car();
 
     }
 }
