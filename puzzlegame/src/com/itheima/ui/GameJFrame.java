@@ -1,8 +1,12 @@
 package com.itheima.ui;
 
 import javax.swing.*;
+import java.util.Random;
 
 public class GameJFrame extends JFrame {
+
+    // 创建一个二维数组
+    int[][] data = new int[4][4];
 
     public GameJFrame(){
         // 初始化界面
@@ -10,6 +14,9 @@ public class GameJFrame extends JFrame {
 
         // 初始化菜单
         initJMenuBar();
+
+        // 初始化数据
+        initData();
 
         // 初始化图片
         initImage();
@@ -19,7 +26,40 @@ public class GameJFrame extends JFrame {
     }
 
     private void initImage() {
-         
+        for (int j = 0; j < 4; j++) {
+            for (int i = 0; i < 4; i++) {
+                // 创建一个图片ImageIcon的对象
+                // 创建一个JLabel的对象
+                JLabel jLabel = new JLabel(new ImageIcon("D:\\Desktop\\BlackHorseUniversity\\Java-start\\puzzlegame\\image\\animal\\animal3\\"+data[i][j]+".jpg"));
+                // 指定图片位置
+                jLabel.setBounds(105 * i, 105 * j, 105, 105);
+                // 把管理容器添加到界面中
+                // this.add(jLabel);
+                this.getContentPane().add(jLabel);
+            }
+        }
+    }
+
+    // 初始化数据
+    private void initData() {
+        // 把一个一维数组中的数据 0~15打乱顺序
+        // 再按照4个一组的方式添加到二维数组中
+        int[] tempArr = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+        Random r = new Random();
+        for (int i=0; i<tempArr.length; i++) {
+            int index = r.nextInt(tempArr.length);
+            int temp = tempArr[i];
+            tempArr[i] = tempArr[index];
+            tempArr[index] = temp;
+        }
+        //  给二维数组添加数据
+        int index = 0;
+        for (int i = 0; i < 4; i ++){
+            for (int j = 0; j < 4; j++) {
+                data[i][j] = tempArr[index];
+                index++;
+            }
+        }
     }
 
     private void initJFrame(){
@@ -33,6 +73,8 @@ public class GameJFrame extends JFrame {
         this.setLocationRelativeTo(null);
         // 设置游戏的关闭模式
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        // 取消默认居中放置，按照X,Y轴的方式添加组件
+        this.setLayout(null);
     }
 
     private void initJMenuBar(){
