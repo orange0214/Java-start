@@ -19,7 +19,7 @@ public class GameJFrame extends JFrame {
     }
 
     private void initImage() {
-        
+         
     }
 
     private void initJFrame(){
